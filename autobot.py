@@ -9,7 +9,8 @@ prefs = {"profile.default_content_setting_values.notifications" : 2}
 chrome_options.add_experimental_option("prefs",prefs)
 
 ## getting location of webdriver
-driver = webdriver.Chrome(r'C:\Users\smitg\Downloads\chromedriver_win32 (1)\chromedriver',chrome_options=chrome_options)
+path = input("Enter Webdriver Full path ")
+driver = webdriver.Chrome(path, chrome_options=chrome_options)
 driver.maximize_window()
 
 
@@ -18,7 +19,7 @@ driver.get('https://www.facebook.com/')
 sleep(1)
 
 username = input("Enter Email id or mobile no ")
-password = input("Enter Passwor ")
+password = input("Enter Password ")
 
 email_field = driver.find_element_by_id('email')
 email_field.send_keys(username)
